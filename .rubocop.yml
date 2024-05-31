@@ -1,0 +1,12 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.0
+
+Rails:
+  Enabled: true
+
+RSpec:
+  Enabled: true
