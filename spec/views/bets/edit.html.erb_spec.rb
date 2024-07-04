@@ -1,14 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe "bets/edit", type: :view do
+  let(:user) { FactoryBot.create(:user) }
+  let(:event) { FactoryBot.create(:event) }
+
   before(:each) do
     @bet = assign(:bet, Bet.create!(
       value: 1,
       predicted_result: "MyString",
       actual_result: "MyString",
       status: 1,
-      user: nil,
-      event: nil
+      user: user,
+      event: event
     ))
   end
 

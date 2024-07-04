@@ -2,13 +2,28 @@
 
 <h1>Bets</h1>
 
-<div id="bets">
-  <% @bets.each do |bet| %>
-    <%= render bet %>
-    <p>
-      <%= link_to "Show this bet", bet %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Predicted Result</th>
+      <th>Actual Result</th>
+      <th>Status</th>
+      <th>User</th>
+      <th>Event</th>
+    </tr>
+  </thead>
 
-<%= link_to "New bet", new_bet_path %>
+  <tbody>
+    <% @bets.each do |bet| %>
+      <tr>
+        <td><%= bet.value %></td>
+        <td><%= bet.predicted_result %></td>
+        <td><%= bet.actual_result %></td>
+        <td><%= bet.status %></td>
+        <td><%= bet.user.name %></td>
+        <td><%= bet.event.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

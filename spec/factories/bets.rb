@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :bet do
-    value { 1 }
-    predicted_result { "MyString" }
-    actual_result { "MyString" }
-    status { 1 }
-    user { nil }
-    event { nil }
+    value { 10 }
+    predicted_result { 'Test Result' }
+    actual_result { 'Test Result' }
+    status { 0 }
+    association :user
+    association :event
   end
 end
